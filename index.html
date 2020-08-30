@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Contact List</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/3ad7573e76.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="page-wrapper">
+        <div id="main-content">
+            <header>
+                <div id="logo-div">
+                    <h1 id="logo">
+                        <span class="highlight"><i class="fas fa-user-friends"></i></span> My<span
+                            class="highlight">Contact</span>List
+                    </h1>
+                </div>
+                <div id="search-div">
+                    <button id="search-button" class="show-btn"><i class="fas fa-search"></i></button>
+                    <input id="search" type="text" placeholder="Search contacts...">
+                </div>
+            </header>
+            <section>
+                <div class="wrapper">
+                    <div id="add-contact">
+                        <h2>
+                            Add Contact...
+                        </h2>
+                        <form id="add-form">
+                            <input id="name-input" type="text" placeholder="Contact Name">
+                            <input id="number-input" type="text" placeholder="Phone Number">
+                            <button class="show-btn"><i class="fas fa-user-plus"></i></button>
+                        </form>
+                    </div>
+                    <div id="contacts-div">
+                        <h1>
+                            My Contacts
+                        </h1>
+                        <div id="contacts">
+                            <p id="no-contacts">You have no contacts yet.</p>
+                            <ul id="list">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <footer>
+        <div>
+            YWN
+            <a href="https://github.com/youssefwaelnasr"><i class="fab fa-github"></i></a>
+            <a href="https://stackoverflow.com/users/13515557/youssef"><i class="fab fa-stack-overflow"></i></a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
