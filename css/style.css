@@ -44,15 +44,24 @@ input {
     outline: none;
 }
 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 /* UTILITY */
 .highlight {
     color: var(--brand-color);
 }
 
 .show-search {
-    width: 100% !important;
-    border: black 2px solid;
-    padding: 0.6rem 1rem;
+    box-sizing: border-box;
+    padding: 0.6rem 1rem !important;
+    width: 18rem !important;
 }
 
 /* HEADER */
@@ -64,7 +73,6 @@ header {
     text-align: center;
     justify-content: space-between;
     padding: 1.8rem 6rem;
-    width: 100%;
 }
 
 #logo {
@@ -84,7 +92,7 @@ header {
     background: var(--light-color);
     border-radius: 5px;
     border: none;
-    transition: ease-in 300ms;
+    transition: ease-in 200ms;
     font-size: 1.2rem;
     cursor: pointer;
     height: 100%;
@@ -93,12 +101,11 @@ header {
 
 .show-btn:hover {
     background: var(--brand-color);
-    transition: ease-in 300ms;
 }
 
 #search {
     width: 0;
-    height: 100%;
+    padding: 0;
     background: var(--lighter-color);
     color: var(--darker-color);
     font-size: 1.2rem;
@@ -116,7 +123,6 @@ section {
 }
 
 #add-contact {
-    width: 100%;
     background: var(--darker-color);
     color: var(--light-color);
     padding: 1.6rem 3rem 2.4rem 3rem;
@@ -148,17 +154,16 @@ section {
     font-size: 1.2rem;
     background: var(--light-color);
     color: var(--dark-color);
-    transition: ease-in 300ms;
+    transition: ease-in 200ms;
 }
 
 #add-contact form button:hover {
     background: var(--brand-color);
-    transition: ease-in 300ms;
+    transition: ease-in 200ms;
 }
 
 #contacts-div {
     padding: 1.5rem 3rem 2.5rem 3rem;
-    width: 100%;
     color: var(--lighter-color);
 }
 
@@ -182,7 +187,6 @@ section {
 #list li {
     border-left: var(--light-color) 3px solid;
     transition: ease-in 100ms;
-    width: 100%;
     padding: 0.6rem 0 0.6rem 2.2rem;
     font-size: 1.4rem;
     display: grid;
@@ -192,6 +196,7 @@ section {
     gap: 1rem;
     justify-content: space-between;
     margin-bottom: 2rem;
+    cursor: grab;
 }
 
 #list li:hover {
@@ -212,23 +217,27 @@ section {
 
 .delete {
     grid-area: delete;
+    margin: auto;
+    margin-right: 2rem;
     background: var(--danger);
     text-align: center;
-    margin: auto;
     padding: 0.6rem 1rem;
     border-radius: 10px;
     font-size: 1.4rem;
     font-weight: 200;
-    margin-right: 2rem !important;
     cursor: pointer;
-    transition: ease-in 300ms;
+    transition: ease-in 200ms;
     color: var(--lighter-color) !important;
 }
 
 .delete:hover {
-    transition: ease-in 300ms;
+    transition: ease-in 200ms;
     background: var(--danger-dark);
     color: var(--light-color);
+}
+
+.dragging {
+    opacity: 0.4;
 }
 
 /* FOOTER */
@@ -263,6 +272,10 @@ footer div i.fa-stack-overflow:hover {
 }
 
 @media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+
     header {
         padding: 1.8rem 2rem;
         flex-direction: column;
@@ -282,10 +295,11 @@ footer div i.fa-stack-overflow:hover {
 
     #add-contact form input {
         width: 100%;
+        text-align: center;
     }
 
     #add-contact form button {
-        width: 30%;
+        width: 100%;
         align-self: center;
     }
 
